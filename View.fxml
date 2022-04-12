@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <VBox prefHeight="826.0" prefWidth="251.0">
+         <children>
+            <Button fx:id="btnHome" defaultButton="true" mnemonicParsing="false" onAction="#homeButtonClicked" prefHeight="159.0" prefWidth="250.0" text="HOME">
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+               <font>
+                  <Font name="System Italic" size="47.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnGenre" layoutX="10.0" layoutY="147.0" mnemonicParsing="false" onAction="#genreButtonClicked" prefHeight="71.0" prefWidth="250.0" text="Search By Genre" textFill="#0d0d0d">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnName" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#nameButtonClicked" prefHeight="71.0" prefWidth="249.0" text="Search By Name">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnYear" layoutX="10.0" layoutY="218.0" mnemonicParsing="false" onAction="#yearButtonClicked" prefHeight="71.0" prefWidth="249.0" text="Search By Year">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnPlatform" layoutX="10.0" layoutY="289.0" mnemonicParsing="false" onAction="#platformButtonClicked" prefHeight="71.0" prefWidth="249.0" text="Search By Platform">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnPubComp" layoutX="10.0" layoutY="360.0" mnemonicParsing="false" onAction="#pubButtonClicked" prefHeight="71.0" prefWidth="249.0" text="Search By Publisher Company">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnExeComp" layoutX="10.0" layoutY="431.0" mnemonicParsing="false" onAction="#exeButtonClicked" prefHeight="71.0" prefWidth="249.0" text="Search By Executing Company">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnFavorite" mnemonicParsing="false" onAction="#favoriteButtonClicked" prefHeight="69.0" prefWidth="249.0" text="My Favorites">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnTopTen" layoutX="10.0" layoutY="573.0" mnemonicParsing="false" onAction="#topTenButtonClicked" prefHeight="70.0" prefWidth="249.0" text="Top 10 Video Games">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <TableView fx:id="tableList" layoutX="251.0" layoutY="134.0" prefHeight="589.0" prefWidth="1546.0">
+         <columns>
+            <TableColumn fx:id="name" prefWidth="276.0" text="Name" />
+            <TableColumn fx:id="genre" minWidth="0.0" prefWidth="72.0" text="Genre" />
+            <TableColumn fx:id="platform" minWidth="4.0" prefWidth="110.0" text="Platform" />
+            <TableColumn fx:id="pubComp" minWidth="3.0" prefWidth="161.0" text="Publisher company" />
+            <TableColumn fx:id="devComp" prefWidth="146.0" text="Developer company" />
+            <TableColumn fx:id="year" minWidth="6.0" prefWidth="98.0" text="Release Year" />
+            <TableColumn fx:id="trailer" minWidth="0.0" prefWidth="78.0" text="Trailer" />
+            <TableColumn fx:id="rating" minWidth="0.0" prefWidth="58.0" text="Rating" />
+            <TableColumn fx:id="description" minWidth="0.0" prefWidth="495.0" text="Description" />
+            <TableColumn fx:id="like" minWidth="0.0" prefWidth="50.0" text="Like" />
+         </columns>
+      </TableView>
+      <Button fx:id="exitBtn" layoutX="1735.0" layoutY="784.0" mnemonicParsing="false" onAction="#pressedExitButton" prefHeight="27.0" prefWidth="51.0" text="Exit">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="lblMain" alignment="CENTER" contentDisplay="CENTER" layoutX="254.0" layoutY="2.0" prefHeight="127.0" prefWidth="258.0" text="Home">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </Label>
+      <Text fx:id="txtSearchName" layoutX="734.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter a video game name :" textAlignment="CENTER" visible="false" wrappingWidth="245.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="mainComboList" layoutX="734.0" layoutY="31.0" onAction="#selectInputFromComboBox" prefHeight="25.0" prefWidth="245.0" visible="false" />
+      <TextField fx:id="txtFieldName" layoutX="734.0" layoutY="90.0" prefHeight="25.0" prefWidth="245.0" visible="false" />
+      <Text fx:id="txtCombo" layoutX="734.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" visible="false" wrappingWidth="245.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnEnterTextFieldSearch" layoutX="1000.0" layoutY="90.0" mnemonicParsing="false" onAction="#btnEnterSearch" text="enter" visible="false" />
+   </children>
+</AnchorPane>
