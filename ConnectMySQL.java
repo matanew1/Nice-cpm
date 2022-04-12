@@ -19,8 +19,8 @@ public class ConnectMySQL {
 	public ConnectMySQL() {
 
 		url = "jdbc:mysql://localhost:3306/video_game";
-		username = "root";
-		password = "Mb2702";
+		username = "*****";
+		password = "*****";
 
 		try {
 
